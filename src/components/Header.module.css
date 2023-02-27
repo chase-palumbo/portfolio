@@ -1,0 +1,53 @@
+.headerBox {
+  text-align: center;
+  padding: 3% 0 8%;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.headerTitle {
+  font-size: 2rem;
+  color: #333333;
+}
+
+.headerLinks {
+  margin-top: 5rem;
+}
+
+.headerLinks a {
+  margin: 0 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 1rem;
+  color: white;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.githubLink {
+  background-color: #2c3e50;
+}
+
+.githubLink:hover {
+  background-color: 	#1b2631;
+}
+
+.linkedinLink {
+  background-color: #2980b9;
+}
+
+.linkedinLink:hover {
+  background-color: #206592;
+}
+
+.contactLink {
+  background-color: #27ae60;
+}
+
+.contactLink:hover {
+  background-color: #219150;
+}
+
+.icon {
+  margin-right: 0.6rem;
+}

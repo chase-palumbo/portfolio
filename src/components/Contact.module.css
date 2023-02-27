@@ -1,0 +1,32 @@
+.contactSection {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5%;
+}
+
+.aboutMeBox {
+  padding: 1rem;
+  width: 40%;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
+}
+
+.aboutMeTitle,
+.contactTitle {
+  font-size: 2.5rem;
+}
+
+.aboutMeText {
+  font-size: 1.3rem;
+}
+
+.contactBox {
+  padding: 1rem;
+  width: 30%;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
+}
