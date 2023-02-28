@@ -21,7 +21,7 @@ const details = {
   },
   forum: {
     codeLink: 'https://github.com/chase-palumbo/react-nfl-forum',
-    projectLink: "",
+    projectLink: "https://nfl-forum.netlify.app/",
     img: forumImg,
     type: "website",
     descList: [
@@ -36,7 +36,7 @@ const details = {
   },
   space: {
     codeLink: 'https://github.com/chase-palumbo/space-invaders',
-    projectLink: "",
+    projectLink: false,
     img: spaceImg,
     type: "game",
     descList: [
@@ -52,15 +52,19 @@ const details = {
 const ProjectDetails = ({ projectName }) => {
   const project = details[projectName];
 
+  const projectLinkBtn = (
+    <a href={project.projectLink} className={classes.playGameBtn}>
+      <i class={"fa-solid fa-play " + classes.codeIcon}></i>
+      {project.type == 'game' ? 'Play the Game' : 'Open Website'}
+    </a>
+  )
+
   return (
     <div className={classes.detailsBox}>
       <div className={classes.detailHeading}>
         <img src={project.img} alt="Picture relating to project" />
         <div className={classes.detailLinks}>
-          <a href={project.projectLink} className={classes.playGameBtn}>
-            <i class={"fa-solid fa-play " + classes.codeIcon}></i>
-            {project.type == 'game' ? 'Play the Game' : 'Open Website'}
-          </a>
+          {project.projectLink && projectLinkBtn}
           <a className={classes.seeCodeLink} href={project.codeLink}>
             <i class={"fa-solid fa-code " + classes.codeIcon}></i>
             See the Code 
