@@ -5,9 +5,12 @@ const Contact = () => {
     <section id="contact">
       <div className={classes.contactSection}>
         <div className={classes.contactBox}>
-          <p className={classes.contactTitle}>Contact Me</p>
-          <p>Chase Palumbo</p>
-          <p>cpalumbo182@gmail.com</p>
+          <p className={classes.contactTitle}>
+            <i className={"fa-solid fa-phone " + classes.contactIcon}></i>
+            Contact
+          </p>
+          <p><strong>Name </strong>Chase Palumbo</p>
+          <p><strong>Email </strong>cpalumbo182@gmail.com</p>
         </div>
 
         <div className={classes.aboutMeBox}>

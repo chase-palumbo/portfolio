@@ -11,7 +11,7 @@ const videos = {
 
 const Video = ({ videoName }) => {
   return (
-    <video autoplay="true" muted loop>
+    <video autoPlay muted loop>
       <source src={videos[videoName]} type="video/mp4" />
     </video>
   );

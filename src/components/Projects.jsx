@@ -1,12 +1,29 @@
+import { useState, useEffect } from 'react';
 import Video from './Video';
 import ProjectDetails from './ProjectDetails';
 import classes from './Projects.module.css';
-import { useState } from 'react';
 
 const Projects = () => {
   const [showChessDetails, setShowChessDetails] = useState(false);
   const [showForumDetails, setShowForumDetails] = useState(false);
   const [showSpaceDetails, setShowSpaceDetails] = useState(false);
+  const [largeBp, setLargeBp] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      console.log("resize handler called")
+      if (window.innerWidth > 1100) 
+        setLargeBp(false)
+      else if (window.innerWidth < 1100) 
+        setLargeBp(true)
+    };
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, []);
 
   return (
     <section id="projects">
@@ -21,7 +38,7 @@ const Projects = () => {
 
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
-                <i class={'fa-brands fa-square-js ' + classes.langIcon}></i>
+                <i className={'fa-brands fa-square-js ' + classes.langIcon}></i>
                 Chase's Chess
               </p>
               <hr />
@@ -34,36 +51,26 @@ const Projects = () => {
               </p>
               <button
                 className={classes.expandBtn}
-                onClick={() =>
-                  !showChessDetails
-                    ? setShowChessDetails(true)
-                    : setShowChessDetails(false)
-                }
+                onClick={() => setShowChessDetails(!showChessDetails)}
               >
                 {!showChessDetails && 'Learn More'}
                 {showChessDetails && 'Close'}
-                <i
-                  class={
-                    'fa-solid ' +
-                    (!showChessDetails ? 'fa-angles-down ' : 'fa-angles-up ') +
-                    classes.expandIcon
-                  }
-                ></i>
               </button>
             </div>
           </div>
 
-          {showChessDetails && (
-            <ProjectDetails
-              projectName="chess"
-              minimize={() => setShowChessDetails(false)}
-            />
-          )}
+          <ProjectDetails
+            show={showChessDetails}
+            projectName="chess"
+            minimize={() => setShowChessDetails(false)}
+          />
 
           <div className={classes.projectItem}>
+            {largeBp && <Video videoName="forum" />}
+
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
-                <i class={'fa-brands fa-react ' + classes.langIcon}></i>NFL
+                <i className={'fa-brands fa-react ' + classes.langIcon}></i>NFL
                 Forum
               </p>
               <hr />
@@ -77,41 +84,29 @@ const Projects = () => {
               </p>
               <button
                 className={classes.expandBtn}
-                onClick={() =>
-                  !showForumDetails
-                    ? setShowForumDetails(true)
-                    : setShowForumDetails(false)
-                }
+                onClick={() => setShowForumDetails(!showForumDetails)}
               >
                 {!showForumDetails && 'Learn More'}
                 {showForumDetails && 'Close'}
-                <i
-                  class={
-                    'fa-solid ' +
-                    (!showForumDetails ? 'fa-angles-down ' : 'fa-angles-up ') +
-                    classes.expandIcon
-                  }
-                ></i>
               </button>
             </div>
 
-            <Video videoName="forum" />
+            {!largeBp && <Video videoName="forum" />}
           </div>
 
-          {showForumDetails && (
-            <ProjectDetails
-              projectName="forum"
-              minimize={() => setShowForumDetails(false)}
-            />
-          )}
+          <ProjectDetails
+            show={showForumDetails}
+            projectName="forum"
+            minimize={() => setShowForumDetails(false)}
+          />
 
           <div className={classes.projectItem}>
             <Video videoName="space" />
 
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
-                <i class={'fa-brands fa-python ' + classes.langIcon}></i>Space
-                Invaders
+                <i className={'fa-brands fa-python ' + classes.langIcon}></i>
+                Space Invaders
               </p>
               <hr />
               <p className={classes.infoText}>
@@ -123,31 +118,19 @@ const Projects = () => {
               </p>
               <button
                 className={classes.expandBtn}
-                onClick={() =>
-                  !showSpaceDetails
-                    ? setShowSpaceDetails(true)
-                    : setShowSpaceDetails(false)
-                }
+                onClick={() => setShowSpaceDetails(!showSpaceDetails)}
               >
                 {!showSpaceDetails && 'Learn More'}
                 {showSpaceDetails && 'Close'}
-                <i
-                  class={
-                    'fa-solid ' +
-                    (!showSpaceDetails ? 'fa-angles-down ' : 'fa-angles-up ') +
-                    classes.expandIcon
-                  }
-                ></i>
               </button>
             </div>
           </div>
 
-          {showSpaceDetails && (
-            <ProjectDetails
-              projectName="space"
-              minimize={() => setShowSpaceDetails(false)}
-            />
-          )}
+          <ProjectDetails
+            show={showSpaceDetails}
+            projectName="space"
+            minimize={() => setShowSpaceDetails(false)}
+          />
         </div>
       </div>
     </section>

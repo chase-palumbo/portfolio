@@ -1,21 +1,26 @@
 .contactSection {
-  display: flex;
-  justify-content: space-evenly;
   padding: 5%;
 }
 
 .aboutMeBox {
+  margin: auto;
   padding: 1rem;
   width: 40%;
-  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  border: 2px solid #3498db;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
   color: #333333;
 }
 
+.aboutMeBox:hover {
+  box-shadow: 0 0 5px 3px #3498db;
+  transform: scale(1.025);
+}
+
 .aboutMeTitle,
 .contactTitle {
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .aboutMeText {
@@ -24,9 +29,29 @@
 
 .contactBox {
   padding: 1rem;
+  margin: auto auto 3rem;
+  text-align: center;
   width: 30%;
-  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+  border: 2px solid #3498db;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
   color: #333333;
+}
+
+.contactBox:hover {
+  box-shadow: 0 0 5px 3px #3498db;
+  transform: scale(1.025);
+}
+
+.contactIcon {
+  margin-right: 1rem;
+}
+
+@media (max-width: 900px) {
+  .aboutMeBox {
+    width: 80%;
+  }
+  .contactBox {
+    width: 80%;
+  }
 }

@@ -12,6 +12,9 @@
 
 .headerLinks {
   margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .headerLinks a {
@@ -50,4 +53,11 @@
 
 .icon {
   margin-right: 0.6rem;
+}
+
+@media (max-width: 600px) {
+  .headerLinks {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

@@ -22,6 +22,7 @@
 .projectItem {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   border-radius: 5px;
   padding: 1rem;
   margin: 4rem 0;
@@ -52,10 +53,32 @@
 }
 
 .expandBtn:hover {
-  transform: scale(1.1);
+  animation: bounce 300ms ease forwards;
 }
 
 .expandIcon {
   margin-left: 0.5rem;
   vertical-align: middle;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1100px) {
+  .projectItem {
+    flex-direction: column;
+    text-align: center;
+  }
+  .projectInfo {
+    width: 70%;
+  }
 }
