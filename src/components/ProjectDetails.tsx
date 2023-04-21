@@ -5,7 +5,17 @@ import forumImg from '../assets/images/football.gif';
 import spaceImg from '../assets/images/spaceship.png';
 import classes from './ProjectDetails.module.css';
 
-const details = {
+interface DetailsType {
+  [project: string]: {
+    codeLink: string;
+    projectLink?: string;
+    img: string;
+    type: string;
+    descList: string[];
+  };
+}
+
+const details: DetailsType = {
   chess: {
     codeLink: 'https://github.com/chase-palumbo/ChessV2',
     projectLink: 'https://chases-chess.netlify.app',
@@ -38,27 +48,35 @@ const details = {
   },
   space: {
     codeLink: 'https://github.com/chase-palumbo/space-invaders',
-    projectLink: false,
     img: spaceImg,
     type: 'game',
     descList: [
       'Play the remade Space Invaders arcade game in Python!',
+      'Stores your high score.',
       'This project taught me a lot about debugging and optimizing your code.',
       'Object-Oriented design using the Python Turtle library.',
-      'Stores your high score.',
+      'All sprites created myself.',
       'Player has three lives.  Getting hit 3 times or allowing the aliens to breach your defenses results in a game over.',
     ],
   },
 };
 
-const ProjectDetails = ({ projectName, show }) => {
+interface ProjectDetailsProps {
+  projectName: string;
+  show: boolean;
+}
+
+const ProjectDetails: React.FC<ProjectDetailsProps> = ({
+  projectName,
+  show,
+}) => {
   const project = details[projectName];
-  const nodeRef = useRef(null)
+  const nodeRef = useRef<HTMLDivElement>(null);
 
   const projectLinkBtn = (
     <a href={project.projectLink} className={classes.playGameBtn}>
       <i className={'fa-solid fa-play ' + classes.codeIcon}></i>
-      {project.type == 'game' ? 'Play the Game' : 'Open Website'}
+      {project.type === 'game' ? 'Play the Game' : 'Open Website'}
     </a>
   );
 
@@ -73,12 +91,12 @@ const ProjectDetails = ({ projectName, show }) => {
         enter: '',
         enterActive: classes.DetailsOpen,
         exit: '',
-        exitActive: classes.DetailsClose
+        exitActive: classes.DetailsClose,
       }}
     >
       <div ref={nodeRef} className={classes.detailsBox}>
         <div className={classes.detailHeading}>
-          <img src={project.img} alt="Picture relating to project" />
+          <img src={project.img} alt="" />
           <div className={classes.detailLinks}>
             {project.projectLink && projectLinkBtn}
             <a className={classes.seeCodeLink} href={project.codeLink}>
@@ -89,7 +107,7 @@ const ProjectDetails = ({ projectName, show }) => {
         </div>
 
         <ul className={classes.detailsList}>
-          {project.descList.map((item, index) => (
+          {project.descList.map((item: string, index: number) => (
             <li className={classes.listItem} key={index}>
               <p>{item}</p>
               <hr />

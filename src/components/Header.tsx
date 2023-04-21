@@ -1,16 +1,14 @@
-import background from '../assets/images/background-colors.png';
+import myPic from '../assets/images/resumepic.jpeg';
 import classes from './Header.module.css';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <section id="header">
-      <div
-        className={classes.headerBox}
-        style={{ backgroundImage: `url(${background})` }}
-      >
+      <div className={classes.headerBox}>
+        <img className={classes.myImg} src={myPic} alt=""/>
         <div className={classes.headerTitle}>
           <h1>Hi, I'm Chase</h1>
-          <p>A JavaScript and Python developer.</p>
+          <p>A JavaScript/TypeScript and Python developer.</p>
         </div>
         <div className={classes.headerLinks}>
           <a

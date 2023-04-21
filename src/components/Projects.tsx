@@ -3,7 +3,7 @@ import Video from './Video';
 import ProjectDetails from './ProjectDetails';
 import classes from './Projects.module.css';
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const [showChessDetails, setShowChessDetails] = useState(false);
   const [showForumDetails, setShowForumDetails] = useState(false);
   const [showSpaceDetails, setShowSpaceDetails] = useState(false);
@@ -11,7 +11,6 @@ const Projects = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log("resize handler called")
       if (window.innerWidth > 1100) 
         setLargeBp(false)
       else if (window.innerWidth < 1100) 
@@ -62,7 +61,6 @@ const Projects = () => {
           <ProjectDetails
             show={showChessDetails}
             projectName="chess"
-            minimize={() => setShowChessDetails(false)}
           />
 
           <div className={classes.projectItem}>
@@ -97,7 +95,6 @@ const Projects = () => {
           <ProjectDetails
             show={showForumDetails}
             projectName="forum"
-            minimize={() => setShowForumDetails(false)}
           />
 
           <div className={classes.projectItem}>
@@ -129,7 +126,6 @@ const Projects = () => {
           <ProjectDetails
             show={showSpaceDetails}
             projectName="space"
-            minimize={() => setShowSpaceDetails(false)}
           />
         </div>
       </div>
