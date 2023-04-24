@@ -51,11 +51,11 @@ const details: DetailsType = {
     img: spaceImg,
     type: 'game',
     descList: [
-      'Play the remade Space Invaders arcade game in Python!',
-      'Stores your high score.',
+      'Play a re-imagined version of the Space Invaders arcade game!',
       'This project taught me a lot about debugging and optimizing your code.',
       'Object-Oriented design using the Python Turtle library.',
       'All sprites created myself.',
+      'Stores your high score.',
       'Player has three lives.  Getting hit 3 times or allowing the aliens to breach your defenses results in a game over.',
     ],
   },

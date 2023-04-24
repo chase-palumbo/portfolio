@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
             Contact
           </p>
           <p><strong>Name </strong>Chase Palumbo</p>
-          <p><strong>Email </strong>cpalumbo182@gmail.com</p>
+          <p><strong>Email </strong>cpalumbodev@gmail.com</p>
           <p><strong>Phone </strong>732-799-2616</p>
         </div>
       </div>
