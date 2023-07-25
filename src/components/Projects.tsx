@@ -38,11 +38,11 @@ const Projects: React.FC = () => {
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
                 <i className={'fa-brands fa-square-js ' + classes.langIcon}></i>
-                Chase's Chess
+                Chasing Chess
               </p>
               <hr />
               <p className={classes.infoText}>
-                My first project is a fully functional chess application made
+                Chasing Chess is a fully functional chess application made
                 from scratch with vanilla JavaScript. It allows you to either
                 play against the computer or play with two people. This was a
                 truly fun and challenging app to work on and I'm very proud of
@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
               </p>
               <hr />
               <p className={classes.infoText}>
-                I decided to learn React and eventually created a forum website
+                This is a forum website
                 where a user can create an account, login, and make posts about
                 NFL related topics. This was created using React, React Router,
                 and Redux. This project taught me a lot about the benefits of
@@ -107,11 +107,7 @@ const Projects: React.FC = () => {
               </p>
               <hr />
               <p className={classes.infoText}>
-                After diving into JavaScript and React, I wanted to try a
-                different programming language to learn the advantages of
-                different languages. I studied Python and decided to create a
-                re-imagined Space Invaders game. Players can shoot down aliens
-                in space and dodge incoming enemy bullets and lasers!
+                After diving deep into JavaScript and React, I wanted to create something challenging with Python. This is a re-creation of the popular 'Space Invaders' arcade game, made entitrely with Python! Players can shoot down aliens in space and dodge incoming enemy bullets and lasers!
               </p>
               <button
                 className={classes.expandBtn}
