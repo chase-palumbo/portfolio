@@ -1,4 +1,4 @@
-import myPic from '../assets/images/resumepic.jpeg';
+import myPic from '../assets/images/resumepic.png';
 import classes from './Header.module.css';
 
 const Header: React.FC = () => {

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import newsImg from '../assets/images/news.png';
 import chessImg from '../assets/images/chess-img.png';
 import forumImg from '../assets/images/football.gif';
 import spaceImg from '../assets/images/spaceship.png';
@@ -16,6 +17,18 @@ interface DetailsType {
 }
 
 const details: DetailsType = {
+  news: {
+    codeLink: 'https://github.com/chase-palumbo/news-website',
+    img: newsImg,
+    type: 'website',
+    descList: [
+      'Discover up-to-date stories published by the top news sources in the US.',
+      'Search for articles using the search box.',
+      'Filter articles by different categories such as sports, entertainment, and business.',
+      'Click the title to visit the article\'s webpage.',
+      'Made with vanilla JavaScript, CSS, and HTML.'
+    ]
+  },
   chess: {
     codeLink: 'https://github.com/chase-palumbo/ChessV2',
     projectLink: 'https://chases-chess.netlify.app',

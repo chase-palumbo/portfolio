@@ -1,3 +1,4 @@
+import newsVideo from '../assets/videos/palumbo_news_loop.mp4';
 import chessVideo from '../assets/videos/chess_loop.mp4';
 import forumVideo from '../assets/videos/forum_loop.mp4';
 import spaceVideo from '../assets/videos/space_loop.mp4';
@@ -8,6 +9,7 @@ interface VideoType {
 }
 
 const videos: VideoType = {
+  news: newsVideo,
   chess: chessVideo,
   forum: forumVideo,
   space: spaceVideo,

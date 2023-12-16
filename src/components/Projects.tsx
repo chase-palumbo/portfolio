@@ -7,6 +7,7 @@ const Projects: React.FC = () => {
   const [showChessDetails, setShowChessDetails] = useState(false);
   const [showForumDetails, setShowForumDetails] = useState(false);
   const [showSpaceDetails, setShowSpaceDetails] = useState(false);
+  const [showNewsDetails, setShowNewsDetails] = useState(false);
   const [largeBp, setLargeBp] = useState(false)
 
   useEffect(() => {
@@ -33,7 +34,34 @@ const Projects: React.FC = () => {
 
         <div className={classes.projects}>
           <div className={classes.projectItem}>
-            <Video videoName="chess" />
+            <Video videoName="news" />
+
+            <div className={classes.projectInfo}>
+              <p className={classes.infoTitle}>
+                <i className={'fa-brands fa-square-js ' + classes.langIcon}></i>
+                Palumbo News
+              </p>
+              <hr />
+              <p className={classes.infoText}>
+                Palumbo News is a news website that displays the current top news headlines across the US, from many different sources.  You can search for and filter articles.  This project was made using vanilla JavaScript and the NewsAPI.
+              </p>
+              <button
+                className={classes.expandBtn}
+                onClick={() => setShowNewsDetails(!showNewsDetails)}
+              >
+                {!showNewsDetails && 'Learn More'}
+                {showNewsDetails && 'Close'}
+              </button>
+            </div>
+          </div>
+
+          <ProjectDetails
+            show={showNewsDetails}
+            projectName="news"
+          />
+
+          <div className={classes.projectItem}>
+            {largeBp && <Video videoName="chess" />}
 
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
@@ -56,6 +84,8 @@ const Projects: React.FC = () => {
                 {showChessDetails && 'Close'}
               </button>
             </div>
+
+            {!largeBp && <Video videoName="chess" />}
           </div>
 
           <ProjectDetails
@@ -64,7 +94,7 @@ const Projects: React.FC = () => {
           />
 
           <div className={classes.projectItem}>
-            {largeBp && <Video videoName="forum" />}
+            <Video videoName="forum" />
 
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
@@ -88,8 +118,6 @@ const Projects: React.FC = () => {
                 {showForumDetails && 'Close'}
               </button>
             </div>
-
-            {!largeBp && <Video videoName="forum" />}
           </div>
 
           <ProjectDetails
@@ -98,7 +126,7 @@ const Projects: React.FC = () => {
           />
 
           <div className={classes.projectItem}>
-            <Video videoName="space" />
+            {largeBp && <Video videoName="space" />}
 
             <div className={classes.projectInfo}>
               <p className={classes.infoTitle}>
@@ -117,6 +145,8 @@ const Projects: React.FC = () => {
                 {showSpaceDetails && 'Close'}
               </button>
             </div>
+
+            {!largeBp && <Video videoName="space" />}
           </div>
 
           <ProjectDetails
@@ -124,6 +154,7 @@ const Projects: React.FC = () => {
             projectName="space"
           />
         </div>
+
       </div>
     </section>
   );
