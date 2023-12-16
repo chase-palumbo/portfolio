@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
               </p>
               <hr />
               <p className={classes.infoText}>
-                Palumbo News is a news website that displays the current top news headlines across the US, from many different sources.  You can search for and filter articles.  This project was made using vanilla JavaScript and the NewsAPI.
+                Palumbo News is a news website that displays the current top headlines across the US, from many different sources.  You can search for and filter articles.  This project was made using vanilla JavaScript and the NewsAPI.
               </p>
               <button
                 className={classes.expandBtn}
